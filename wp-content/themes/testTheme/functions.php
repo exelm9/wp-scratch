@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/custom-header.php';
+
 // Holds wordpress custom scripts to be included.  Declare function then run in add action
 function test_enqueue() {
 	wp_enqueue_style('customStyleId', get_template_directory_uri() . '/css/test.css', array(), '1.0.0', 'all');
