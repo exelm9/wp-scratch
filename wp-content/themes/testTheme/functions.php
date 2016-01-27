@@ -5,6 +5,10 @@ require get_template_directory() . '/custom-header.php';
 // Holds wordpress custom scripts to be included.  Declare function then run in add action
 function test_enqueue() {
 	wp_enqueue_style('customStyleId', get_template_directory_uri() . '/css/test.css', array(), '1.0.0', 'all');
+
+	if(is_page('Home')){
+		wp_enqueue_script('customJsId', get_template_directory_uri() . '/js/email-validation.js', array(), '1.0.0', true);
+	}
 }
 
 // hook that gives connection wordpress execution process to a custom function.  Gets triggered by wp_head();
